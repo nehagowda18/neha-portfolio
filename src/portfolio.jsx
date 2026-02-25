@@ -7,13 +7,14 @@ const PROJECTS = [
   {
     id: 1,
     title: "Login and Sign up System",
-    category: "Full-Stack · Authentication",
+    category: "Full-Stack · Tailwind CSS",
     year: "2026",
     description:
       "A clean and responsive Login & Signup system built with React and Tailwind CSS. Features form validation, smooth animations, and a modern designed for a seamless user experience.",
     tags: [ "Tailwind CSS", "JavaScript", "HTML"],
     color: "#C8FF00",
     featured: true,
+    link: "https://login-and-sign-up-page-beta.vercel.app/",
   },
 ];
 
@@ -251,14 +252,16 @@ function ProjectCard({ project, index }) {
           </div>
         </div>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "center", paddingTop: "0.5rem" }}>
-          <div style={{
-            width: "52px", height: "52px", borderRadius: "50%",
-            border: `1px solid ${hovered ? project.color : "rgba(255,255,255,0.15)"}`,
-            display: "flex", alignItems: "center", justifyContent: "center",
-            transform: hovered ? "rotate(45deg)" : "none", transition: "all 0.3s",
-          }}>
-            <span style={{ color: hovered ? project.color : "rgba(255,255,255,0.4)", fontSize: "1.2rem" }}>→</span>
-          </div>
+          <a href={project.link} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
+  <div style={{
+    width: "52px", height: "52px", borderRadius: "50%",
+    border: `1px solid ${hovered ? project.color : "rgba(255,255,255,0.15)"}`,
+    display: "flex", alignItems: "center", justifyContent: "center",
+    transform: hovered ? "rotate(45deg)" : "none", transition: "all 0.3s",
+  }}>
+    <span style={{ color: hovered ? project.color : "rgba(255,255,255,0.4)", fontSize: "1.2rem" }}>→</span>
+  </div>
+</a>
         </div>
       </div>
     </div>

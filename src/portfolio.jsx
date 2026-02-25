@@ -391,12 +391,19 @@ function Contact() {
             Available for freelance projects, consulting, and full-time roles. Whether it's a login system, a full product, or anything in between — let's talk.
           </p>
           <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-            {[["Email", "nehamkgowda18@gmail.com"],["LinkedIn", "linkedin.com/in/neha-632b5425a"],["GitHub", "github.com/nehagowda18"]].map(([l, v]) => (
-              <div key={l} style={{ display: "flex", gap: "1.5rem", alignItems: "baseline" }}>
-                <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.65rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)", width: "4rem", flexShrink: 0 }}>{l}</span>
-                <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.05rem", color: "#C8FF00", cursor: "pointer" }}>{v}</span>
-              </div>
-            ))}
+            {[
+  ["Email", "mailto:nehamkgowda18@gmail.com"],
+  ["LinkedIn", "https://linkedin.com/in/neha-632b5425a"],
+  ["GitHub", "https://github.com/nehagowda18"]
+].map(([l, v]) => (
+  <div key={l} style={{ display: "flex", gap: "1.5rem", alignItems: "baseline" }}>
+    <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.65rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)", width: "4rem", flexShrink: 0 }}>{l}</span>
+    <a href={v} target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.05rem", color: "#C8FF00", cursor: "pointer", textDecoration: "none" }}
+      onMouseEnter={e => e.target.style.textDecoration = "underline"}
+      onMouseLeave={e => e.target.style.textDecoration = "none"}
+    >{v.replace("mailto:", "")}</a>
+  </div>
+))}
           </div>
         </div>
         <div style={{ opacity: inView ? 1 : 0, transform: inView ? "none" : "translateX(30px)", transition: "all 0.8s 0.2s" }}>

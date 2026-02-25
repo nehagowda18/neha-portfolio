@@ -10,18 +10,22 @@ const PROJECTS = [
     category: "Full-Stack · Authentication",
     year: "2026",
     description:
-      "A clean and responsive Login & Signup system built with React and Tailwind CSS. Features form validation, smooth animations, and a modern UI designed for a seamless user experience.",
-    tags: ["React", "Tailwind CSS", "JavaScript", "HTML"],
+      "A clean and responsive Login & Signup system built with React and Tailwind CSS. Features form validation, smooth animations, and a modern designed for a seamless user experience.",
+    tags: [ "Tailwind CSS", "JavaScript", "HTML"],
     color: "#C8FF00",
     featured: true,
   },
 ];
 
 const SKILLS = [
-  { name: "React / Next.js", level: 78 },
+  { name:"HTML & CSS", level:85},
+  { name: "React ", level: 78 },
   { name: "TypeScript", level: 70 },
-  { name: "Node.js / Express", level: 70 },
+  { name: "Node.js ", level: 70 },
   { name: "Tailwind CSS", level: 90 },
+  {name:"Visual Studio Code", level:90},
+  {name:"GitHub", level:85},
+  {name:"Vercel", level:80},
 ];
 
 // --- HOOKS ---
@@ -287,13 +291,13 @@ function About() {
         <div ref={ref} style={{ opacity: inView ? 1 : 0, transform: inView ? "none" : "translateX(-30px)", transition: "all 0.8s" }}>
           <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.72rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "#C8FF00", marginBottom: "1.5rem" }}>About</p>
           <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2rem, 4vw, 3.5rem)", fontWeight: 700, color: "#fff", letterSpacing: "-0.03em", lineHeight: 1.1, margin: "0 0 2rem" }}>
-            Building with purpose, shipping with precision.
+            Building with purpose, learning with precision.
           </h2>
           <p style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic", fontSize: "1.15rem", color: "rgba(255,255,255,0.6)", lineHeight: 1.7, marginBottom: "1.25rem" }}>
-            I'm Neha — a full-stack developer passionate about crafting products that are both beautifully designed and rigorously secure. From intuitive UIs to robust backend systems, I care deeply about every layer.
-          </p>
+            I'm Neha — a full-stack development learner passionate about crafting products that are thoughtfully designed and built with care.
+From intuitive user interfaces to reliable backend systems, I enjoy learning and working across every layer of the web.</p>
           <p style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic", fontSize: "1.15rem", color: "rgba(255,255,255,0.6)", lineHeight: 1.7 }}>
-            My Login System project reflects my dedication to secure-by-design thinking — combining JWT flows, OAuth2 integrations, and role-based access into a seamless, developer-friendly auth experience.
+            My Login System project reflects my dedication to secure-by-design thinking — A responsive and user-friendly authentication interface with clean layouts, form validation, and intuitive user experience.
           </p>
           <div style={{ display: "flex", gap: "2rem", marginTop: "3rem", flexWrap: "wrap" }}>
             {[["4th", "Year BE"], ["Ready to Build", "Projects"], ["Good", "Learner"]].map(([n, l]) => (
@@ -387,7 +391,7 @@ function Contact() {
             Available for freelance projects, consulting, and full-time roles. Whether it's a login system, a full product, or anything in between — let's talk.
           </p>
           <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-            {[["Email", "nehamkgowda18@gmail.com"], ["LinkedIn", "linkedin.com/in/neha-632b5425a"]].map(([l, v]) => (
+            {[["Email", "nehamkgowda18@gmail.com"],["LinkedIn", "linkedin.com/in/neha-632b5425a"],["GitHub", "github.com/nehagowda18"]].map(([l, v]) => (
               <div key={l} style={{ display: "flex", gap: "1.5rem", alignItems: "baseline" }}>
                 <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.65rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)", width: "4rem", flexShrink: 0 }}>{l}</span>
                 <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.05rem", color: "#C8FF00", cursor: "pointer" }}>{v}</span>

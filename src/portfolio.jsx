@@ -1,3 +1,4 @@
+import emailjs from '@emailjs/browser';
 import { useState, useEffect, useRef } from "react";
 
 // --- DATA ---
@@ -381,7 +382,24 @@ function Contact() {
   const inView = useInView(ref);
   const [sent, setSent] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const handleSubmit = (e) => { e.preventDefault(); setSent(true); };
+ const handleSubmit = (e) => {
+  e.preventDefault();
+  emailjs.send(
+    "service_pp8aupd",   // ← paste your Service ID here
+    "template_qdd6y1f",  // ← paste your Template ID here
+    {
+      from_name: form.name,
+      from_email: form.email,
+      message: form.message,
+    },
+    "p2wggfgMQULUgjpsM"    // ← paste your Public Key here
+  ).then(() => {
+    setSent(true);
+  }).catch((error) => {
+    alert("Something went wrong. Please try again!");
+    console.error(error);
+  });
+};
   return (
     <section id="contact" style={{ padding: "8rem 2.5rem", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6rem", alignItems: "start" }}>
